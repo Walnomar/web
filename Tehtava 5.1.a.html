@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <table id="postsTable"></table>
+    </body>
+
+<script>
+axios.get("https://jsonplaceholder.typicode.com/posts")
+  .then(function(response){
+        var htmlTable = "";
+        response.data.forEach(element => {
+            htmlTable += "<tr><td>" + element.id + "</td><td>" + element.title + "</td></tr>"
+        })
+        document.getElementById("postsTable").innerHTML = htmlTable;
+    console.log(response.data[0]); // ex.: { user: 'Your User'}
+    console.log(response.status); // ex.: 200
+  });  
+</script>
+</html>

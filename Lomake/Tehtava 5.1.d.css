@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+.sivu{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(27, 70, 198, 0.231);
+    height: 1000px;
+    padding-top: 25px;
+    border-left: none;
+    border-right: none;
+}
+
+input[type=text]:focus{
+    background-color: rgb(124, 137, 150);
+    border-radius: 5px;
+    border: none;
+}
+input[type=text]:hover{
+    background-color: rgb(124, 137, 150);
+    border-style: ridge;
+    /*border-radius: 2px;*/
+    border-color: transparent;
+    box-shadow: black;
+}
+button:hover{
+    background-color: rgb(149, 186, 184);
+    border-style: ridge;
+    border-radius: 2px;
+    border-color: black;
+}
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+.col-75{
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}

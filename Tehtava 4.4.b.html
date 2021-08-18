@@ -1,0 +1,180 @@
+<html>
+<head>
+    <style>
+        table, tr, td {border: 1px solid black;}
+    </style>
+</head>
+<body>
+<h2>JavaScript Array.forEach()</h2>
+<p>Calls a function once for each array element.</p>
+    
+<p id="demo"></p>
+
+All ratings 
+<input type="checkbox" id="myCheckBox">
+<table id="myTable"></table>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('#myCheckBox').addEventListener('change', 
+      checkChanged);
+  })
+
+  function checkChanged()
+  {
+    if(this.checked)
+    {
+      console.log("checked")
+    }
+    else
+    {
+      console.log("not checked")
+    }
+  }
+ 
+var text;
+var carsJSON = '   {  '  + 
+ '       "data" : [{   '  + 
+ '           "manufacturer" : "Porsche",  '  + 
+ '           "model" : "911",  '  + 
+ '           "price" : 135000,  '  + 
+ '           "quality" : [{   '  + 
+ '               "name" : "overall",  '  + 
+ '               "rating" : 3  '  + 
+ '           },{   '  + 
+ '               "name" : "mechanical",  '  + 
+ '               "rating" : 4  '  + 
+ '           },{   '  + 
+ '               "name" : "powertrain",  '  + 
+ '               "rating" : 2  '  + 
+ '           },{   '  + 
+ '               "name" : "body",  '  + 
+ '               "rating" : 4  '  + 
+ '           },{   '  + 
+ '               "name" : "interior",  '  + 
+ '               "rating" : 3  '  + 
+ '           },{   '  + 
+ '               "name" : "accessories",  '  + 
+ '               "rating" : 2  '  + 
+ '           }],  '  + 
+ '           "wiki" : "http://en.wikipedia.org/wiki/Porsche_997"  '  + 
+ '       },{   '  + 
+ '           "manufacturer" : "Nissan",  '  + 
+ '           "model" : "GT-R",  '  + 
+ '           "price" : 80000,  '  + 
+ '           "quality" : [{   '  + 
+ '               "name" : "overall",  '  + 
+ '                 "rating" : 2  '  + 
+ '               },  '  + 
+ '               { "name" : "mechanical",  '  + 
+ '                 "rating" : 3  '  + 
+ '               },  '  + 
+ '               { "name" : "powertrain",  '  + 
+ '                 "rating" : 5  '  + 
+ '               },  '  + 
+ '               { "name" : "body",  '  + 
+ '                 "rating" : 4  '  + 
+ '               },  '  + 
+ '               { "name" : "interior",  '  + 
+ '                 "rating" : 2  '  + 
+ '               },  '  + 
+ '               { "name" : "accessories",  '  + 
+ '                 "rating" : 2  '  + 
+ '               }  '  + 
+ '           ],  '  + 
+ '           "wiki" : "http://en.wikipedia.org/wiki/Nissan_Gt-r"  '  + 
+ '       },{  '  + 
+ '           "manufacturer" : "BMW",  '  + 
+ '           "model" : "M3",  '  + 
+ '           "price" : 60500,  '  + 
+ '           "quality" : [ { "name" : "overall",  '  + 
+ '                 "rating" : 3  '  + 
+ '               },  '  + 
+ '               { "name" : "mechanical",  '  + 
+ '                 "rating" : 5  '  + 
+ '               },  '  + 
+ '               { "name" : "powertrain",  '  + 
+ '                 "rating" : 3  '  + 
+ '               },  '  + 
+ '               { "name" : "body",  '  + 
+ '                 "rating" : 4  '  + 
+ '               },  '  + 
+ '               { "name" : "interior",  '  + 
+ '                 "rating" : 5  '  + 
+ '               },  '  + 
+ '               { "name" : "accessories",  '  + 
+ '                 "rating" : 3  '  + 
+ '               }  '  + 
+ '           ],  '  + 
+ '           "wiki" : "http://en.wikipedia.org/wiki/Bmw_m3"  '  + 
+ '       },{   '  + 
+ '           "manufacturer" : "Audi",  '  + 
+ '           "model" : "S5",  '  + 
+ '           "price" : 53000,  '  + 
+ '           "quality" : [ { "name" : "overall",  '  + 
+ '                 "rating" : 4  '  + 
+ '               },  '  + 
+ '               { "name" : "mechanical",  '  + 
+ '                 "rating" : 1  '  + 
+ '               },  '  + 
+ '               { "name" : "powertrain",  '  + 
+ '                 "rating" : 1  '  + 
+ '               },  '  + 
+ '               { "name" : "body",  '  + 
+ '                 "rating" : 4  '  + 
+ '               },  '  + 
+ '               { "name" : "interior",  '  + 
+ '                 "rating" : 1  '  + 
+ '               },  '  + 
+ '               { "name" : "accessories",  '  + 
+ '                 "rating" : 5  '  + 
+ '               }  '  + 
+ '           ],  '  + 
+ '           "wiki" : "http://en.wikipedia.org/wiki/Audi_S5#Audi_S5"  '  + 
+ '       },{   '  + 
+ '           "manufacturer" : "Audi",  '  + 
+ '           "model" : "TT",  '  + 
+ '           "price" : 40000,  '  + 
+ '           "quality" : [{   '  + 
+ '               "name" : "overall",  '  + 
+ '                 "rating" : 5  '  + 
+ '               },  '  + 
+ '               { "name" : "mechanical",  '  + 
+ '                 "rating" : 2  '  + 
+ '               },  '  + 
+ '               { "name" : "powertrain",  '  + 
+ '                 "rating" : 2  '  + 
+ '               },  '  + 
+ '               { "name" : "body",  '  + 
+ '                 "rating" : 3  '  + 
+ '               },  '  + 
+ '               { "name" : "interior",  '  + 
+ '                 "rating" : 4  '  + 
+ '               },  '  + 
+ '               { "name" : "accessories",  '  + 
+ '                 "rating" : 1  '  + 
+ '               }  '  + 
+ '           ],  '  + 
+ '           "wiki" : "http://en.wikipedia.org/wiki/Audi_TT"  '  + 
+ '       }]  '  + 
+ '  }  ' ; 
+
+var cars = JSON.parse(carsJSON); 
+
+var text = "";
+cars.data.forEach(createRow)
+document.getElementById("myTable").innerHTML = text;
+
+function createRow(value) {
+    text += "<tr>" +
+    "<td>" + value.manufacturer + "</td>" +
+    "<td>" + value.model + "</td>" +
+    "<td>" + value.price + "</td>" +
+    "<td>" + value.wiki + "</td>" +
+    "<td>" + value.quality[0].rating + "</td>" +
+    "</tr>"
+}
+</script>
+
+</body>
+</html>
